@@ -103,7 +103,7 @@ st.markdown("""
 
 # Callbacks MQTT
 def on_publish(client, userdata, result):
-    st.toast("🎤 Comando enviado exitosamente", icon="✅")
+    st.toast("Comando enviado exitosamente", icon="✅")
 
 def on_message(client, userdata, message):
     global message_received
@@ -179,11 +179,9 @@ if result:
         st.session_state.last_command = command
         
         # Mostrar comando reconocido
-        st.markdown('<div class="result-box">', unsafe_allow_html=True)
         st.markdown("### Comando Reconocido")
         st.markdown(f'<div style="font-size: 1.4rem; color: #7E57C2; font-weight: 600;">"{command}"</div>', unsafe_allow_html=True)
         st.markdown('<div class="status-indicator">✅ Comando procesado</div>', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
         
         # Enviar comando por MQTT
         try:
