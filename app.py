@@ -125,18 +125,13 @@ if 'last_received' not in st.session_state:
 st.markdown('<div class="main-title">🎤 Control por Voz</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Comandos de voz en tiempo real</div>', unsafe_allow_html=True)
 
-# Sección de control por voz
-st.markdown('<div class="voice-section">', unsafe_allow_html=True)
-
 # Icono de micrófono centrado
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
-    st.markdown('<div class="mic-button pulse">🎤</div>', unsafe_allow_html=True)
-
 st.markdown('<div class="info-text">Presiona el botón y da tu comando de voz</div>', unsafe_allow_html=True)
 
 # Botón de reconocimiento de voz
-stt_button = Button(label=" 🎤 Iniciar Reconocimiento ", width=300, height=60)
+stt_button = Button(label=" Iniciar Reconocimiento ", width=300, height=60)
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = false;
