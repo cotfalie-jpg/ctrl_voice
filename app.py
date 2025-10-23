@@ -125,9 +125,6 @@ if 'last_received' not in st.session_state:
 st.markdown('<div class="main-title">🎤 Control por Voz</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Comandos de voz en tiempo real</div>', unsafe_allow_html=True)
 
-# Sección de control por voz
-st.markdown('<div class="voice-section">', unsafe_allow_html=True)
-
 # Icono de micrófono centrado
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
@@ -136,7 +133,7 @@ with col2:
 st.markdown('<div class="info-text">Presiona el botón y da tu comando de voz</div>', unsafe_allow_html=True)
 
 # Botón de reconocimiento de voz
-stt_button = Button(label=" 🎤 Iniciar Reconocimiento ", width=300, height=60)
+stt_button = Button(label=" Iniciar Reconocimiento ", width=300, height=60)
 stt_button.js_on_event("button_click", CustomJS(code="""
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = false;
@@ -185,7 +182,7 @@ if result:
         
         # Mostrar comando reconocido
         st.markdown('<div class="result-box">', unsafe_allow_html=True)
-        st.markdown("### 🎯 Comando Reconocido")
+        st.markdown("### Comando Reconocido")
         st.markdown(f'<div style="font-size: 1.4rem; color: #7E57C2; font-weight: 600;">"{command}"</div>', unsafe_allow_html=True)
         st.markdown('<div class="status-indicator">✅ Comando procesado</div>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -203,7 +200,7 @@ if result:
 
 # Historial de comandos
 if st.session_state.last_command:
-    with st.expander("📝 Historial de Comandos", expanded=True):
+    with st.expander("Historial de Comandos", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
             st.metric("Último Comando", st.session_state.last_command)
@@ -216,12 +213,3 @@ with st.expander("🔧 Información de Conexión", expanded=False):
     st.write(f"**Puerto:** {port}")
     st.write(f"**Tópico:** voice_ctrl")
     st.write("**Comandos sugeridos:** 'encender luz', 'apagar motor', 'abrir puerta', etc.")
-
-# Footer
-st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: #666; padding: 2rem;'>"
-    "Control por Voz • Comunicación Multimodal • Desarrollado con Streamlit"
-    "</div>",
-    unsafe_allow_html=True
-)
