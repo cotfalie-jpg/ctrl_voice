@@ -172,8 +172,6 @@ result = streamlit_bokeh_events(
     debounce_time=0
 )
 
-st.markdown('</div>', unsafe_allow_html=True)
-
 # Mostrar resultados
 if result:
     if "GET_TEXT" in result:
