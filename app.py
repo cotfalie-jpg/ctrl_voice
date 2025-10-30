@@ -44,7 +44,7 @@ st.markdown("""
         margin-bottom: 2rem;
     }
 
-    /* Contenedor glass */
+    /* Contenedor principal */
     .voice-section {
         background-color: #FFFFFFEE;
         border-radius: 25px;
@@ -59,5 +59,57 @@ st.markdown("""
         background: linear-gradient(135deg, #C6E2E3, #FFF2C3);
         color: #DD8E6B;
         border: none;
-        bor
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        font-size: 3rem;
+        margin: 1rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .mic-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(221, 142, 107, 0.3);
+    }
+
+    /* Caja de resultados */
+    .result-box {
+        background: #FFFFFF;
+        border: 2px solid #DD8E6B30;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Indicador de estado */
+    .status-indicator {
+        display: inline-block;
+        background: #C6E2E3;
+        color: #3C3C3C;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+
+    /* Animación suave */
+    .pulse {
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.06); }
+        100% { transform: scale(1); }
+    }
+
+    /* Texto informativo */
+    .info-text {
+        color: #4D797A;
+        font-size: 1rem;
 
