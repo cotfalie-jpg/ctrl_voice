@@ -153,7 +153,7 @@ if "last_command" not in st.session_state:
 # ----------------------------------------------------------
 # ENCABEZADO PRINCIPAL
 # ----------------------------------------------------------
-st.markdown('<div class="main-title">🎤 Control por Voz BAE</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title"> Control por Voz BAE</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Comunica, controla y conecta con suavidad 💛</div>', unsafe_allow_html=True)
 
 # ----------------------------------------------------------
